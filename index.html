@@ -1,61 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <title>CRUDS</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="Author" content="Mymoon Dobaibi">
+        <meta name="description" content="Product Management System">
+        <meta name="Keywords" content="Product, Management, mobile, laptop">
+        <link rel="stylesheet" href="css/style.css">
+        <title>CRUDS</title>
+    </head>
 
-<body>
-    <div class="cruds">
-        <div class="header">
-            <h1>Product Management System</h1>
-        </div>
-        <div class="input">
-            <input type="text" id="title" placeholder="Product: S24 Ultra, iPhone 14, Asus ,,,">
-            <div class="price">
-                <input onkeyup="calculateTotal()" type="text" id="price" placeholder="Price">
-                <input onkeyup="calculateTotal()" type="text" id="discount" placeholder="Discount">
-                <p id="total"></p>
+    <body>
+        <div class="cruds">
+            <div class="header">
+                <h1>Product Management System</h1>
             </div>
-            <input type="number" id="count" placeholder="Count">
-            <input type="text" id="category" placeholder="Category: mobile, laptop, tv ,,, ">
-            <button id="submit">Create</button>
+            <div class="input">
+                <input type="text" id="title" placeholder="Product: S24 Ultra, iPhone 14, Asus ,,,">
+                <div class="price">
+                    <input onkeyup="calculateTotal()" type="text" id="price" placeholder="Price">
+                    <input onkeyup="calculateTotal()" type="text" id="discount" placeholder="Discount">
+                    <p id="total"></p>
+                </div>
+                <input type="number" id="count" placeholder="Count">
+                <input type="text" id="category" placeholder="Category: mobile, laptop, tv ,,, ">
+                <button id="submit">Create</button>
+            </div>
+            <div class="output">
+                <input onkeyup="searchData(this.value)" type="text" id="search" placeholder="Search">
+            </div>
+            <div class="sreachBtn">
+                <button onclick="search(this.id)" id="searchTiltle">Search By Title</button>
+                <button onclick="search(this.id)" id="searchCatogory">Search By Category</button>
+            </div>
+            <div id="deleteAllData"></div>
+            <table id="thead">
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Price</th>
+                    <th>Discount</th>
+                    <th>Total</th>
+                    <th>Category</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </tr>
+                <tbody id="tbody">
+                </tbody>
+            </table>
         </div>
-        <div class="output">
-            <input onkeyup="searchData(this.value)" type="text" id="search" placeholder="Search">
+        <!-- Custom confirmation modal -->
+        <div id="confirmModal" class="modal">
+            <div class="modal-content">
+                <p id="confirmMessage">Are you sure you want to delete this item?</p>
+                <button id="confirmYes">Yes</button>
+                <button id="confirmNo">No</button>
+            </div>
         </div>
-        <div class="sreachBtn">
-            <button onclick="search(this.id)" id="searchTiltle">Search By Title</button>
-            <button onclick="search(this.id)" id="searchCatogory">Search By Category</button>
-        </div>
-        <div id="deleteAllData"></div>
-        <table id="thead">
-            <tr>
-                <th>ID</th>
-                <th>Title</th>
-                <th>Price</th>
-                <th>Discount</th>
-                <th>Total</th>
-                <th>Category</th>
-                <th>Update</th>
-                <th>Delete</th>
-            </tr>
-            <tbody id="tbody">
-            </tbody>
-        </table>
-    </div>
-    <!-- Custom confirmation modal -->
-    <div id="confirmModal" class="modal">
-        <div class="modal-content">
-            <p id="confirmMessage">Are you sure you want to delete this item?</p>
-            <button id="confirmYes">Yes</button>
-            <button id="confirmNo">No</button>
-        </div>
-    </div>
-    <script src="js/script.js"></script>
-</body>
+        <script src="js/script.js"></script>
+    </body>
 
 </html>
