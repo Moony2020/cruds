@@ -139,6 +139,11 @@ td {
     border: 1px solid var(--second-color);
 }
 
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
 /* Model styles */
 .modal {
     display: none;
