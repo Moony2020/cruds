@@ -194,6 +194,46 @@ th {
     background-color: #e53935;
 }
 
+/* footer starts */
+footer .footer-container {
+    background: rgba(117, 116, 116, 0.337);
+    width: 100%;
+    padding: .6rem;
+}
+
+.col-sm-6 {
+    padding: 1px 0 0 3px;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+
+.col-sm-6 h4 {
+    font-size: 0.9rem;
+    margin-bottom: 0.4rem;
+    font-weight: bold;
+    color: var(--main-color);
+}
+
+.col-sm-6 i {
+    font-size: 2rem;
+    text-decoration: none;
+    color: var(--text-color);
+    display: inline-block;
+}
+
+.Copyright {
+    padding: 1rem;
+    color: var(--text-color);
+    font-size: 0.8rem;
+}
+
+.Copyright span {
+    color: var(--main-color);
+}
+
+/* footer ends */
+
+/* media query*/
 @media screen and (max-width: 545px) {
     .header {
         font-size: .7rem;
