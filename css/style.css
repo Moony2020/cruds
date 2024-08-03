@@ -5,9 +5,13 @@
 }
 
 body {
-    background: radial-gradient(circle, #2b2828ee, #000000);
+    background: radial-gradient(farthest-corner, #4d0a41ee, #1d1c1c);
     color: #fff;
     font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 :root {
@@ -22,6 +26,8 @@ body {
 .cruds {
     width: 98%;
     margin: auto;
+    flex: 1;
+    /* Allow the .cruds container to grow and take up available space */
 }
 
 .header {
@@ -41,8 +47,6 @@ body {
     align-items: center;
 }
 
-
-
 input {
     width: 100%;
     height: 2rem;
@@ -51,10 +55,9 @@ input {
     padding: 4px 4px;
     outline: none;
     margin: 5px;
-    background: rgb(49, 49, 49);
+    background: rgb(20, 20, 20);
     color: var(--text-color);
     box-shadow: 0 0 4px var(--main-color);
-
 }
 
 input:hover {
@@ -88,10 +91,10 @@ input:hover {
 }
 
 button {
-    width: 100%;
+    width: 90%;
     max-width: 200px;
     height: 2.5rem;
-    margin-top: 12px;
+    margin: 6px 2px 4px 6px;
     background: var(--main-color);
     color: var(--first-color);
     font-weight: bold;
@@ -99,15 +102,14 @@ button {
     cursor: pointer;
     border: 2px solid var(--second-color);
     border-radius: 18px;
-    transition: 0.4s;
+    transition: background-color 0.4s, color 0.4s, border 0.4s;
     outline: none;
 }
 
 button:hover {
     background: var(--first-color);
-    letter-spacing: 1px;
     color: var(--main-color);
-    border: 3px solid var(--main-color);
+    border: 2px solid var(--hover-color);
 }
 
 .sreachBtn {
@@ -132,11 +134,13 @@ table {
     border-collapse: collapse;
 }
 
+
 /* border for table */
+
 table,
 th,
 td {
-    border: 1px solid var(--second-color);
+    border: 2px solid var(--second-color);
 }
 
 th {
@@ -144,7 +148,9 @@ th {
     padding-bottom: 12px;
 }
 
+
 /* Model styles */
+
 .modal {
     display: none;
     position: fixed;
@@ -184,6 +190,7 @@ th {
 
 .modal-content button:hover {
     background-color: var(--hover-color);
+    color: #000000;
 }
 
 .modal-content #confirmNo {
@@ -194,11 +201,16 @@ th {
     background-color: #e53935;
 }
 
+
 /* footer starts */
-footer .footer-container {
-    background: rgba(117, 116, 116, 0.337);
+
+footer {
+    background: rgba(0, 0, 0, 0.337);
     width: 100%;
     padding: .6rem;
+    text-align: center;
+    margin-top: auto;
+    /* Push the footer to the bottom */
 }
 
 .col-sm-6 {
@@ -215,14 +227,14 @@ footer .footer-container {
 }
 
 .col-sm-6 i {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     text-decoration: none;
     color: var(--text-color);
     display: inline-block;
 }
 
 .Copyright {
-    padding: 1rem;
+    padding: .5rem;
     color: var(--text-color);
     font-size: 0.8rem;
 }
@@ -231,26 +243,27 @@ footer .footer-container {
     color: var(--main-color);
 }
 
+
 /* footer ends */
 
+
 /* media query*/
+
 @media screen and (max-width: 545px) {
     .header {
         font-size: .7rem;
     }
-
     .sreachBtn button {
         width: 44%;
     }
-
     button {
         font-size: .9rem;
+        width: 100%;
+        margin: 1px 2px 2px 1px;
     }
-
     #thead th {
         font-size: .9rem;
     }
-
     .input,
     .output {
         max-width: 360px;
